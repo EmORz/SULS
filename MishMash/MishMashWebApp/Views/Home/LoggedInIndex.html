@@ -1,0 +1,44 @@
+﻿@if(Model.UserRole == "Admin")
+{
+<h1 class="text-center text-mishmash">Welcome, Admin - @User.Username !</h1>
+
+}
+@else
+{
+<h1 class="text-center text-mishmash">Welcome, @User.Username !</h1>
+}
+<h2 class="text-mishmash">Your channels</h2>
+<hr class="hr-2" />
+<div class="container-fluid">
+    <div class="row justify-content-around">
+
+        @for(var  i =0; i < Model.YouChannels.Count(); i++)
+        {
+
+        { var channel = Model.YouChannels.ToList[i];}
+        @if(i % 5 == 0 && i> 1)
+        {
+    </div>
+    <div class="row justify-content-around mt-3">
+        }
+        <div class="col-md-2 bg-mishmash text-center text-white">
+            @channel.Name
+            <hr class="hr-2 bg-white text-white" />
+            @channel.Type Game channel
+            <hr />
+            <hr class="hr-2 bg-white text-white" />
+            @channel.FollowersCount 4500 Following
+            <hr class="hr-2 bg-white text-white" />
+            <hr />
+
+        </div>
+        }
+    </div>
+</div>
+
+
+<h2 class="text-mishmash">Suggested</h2>
+<hr class="hr-2" />
+
+<h2 class="text-mishmash">See other</h2>
+<hr class="hr-2" />

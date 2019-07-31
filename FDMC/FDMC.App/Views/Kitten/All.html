@@ -1,0 +1,86 @@
+﻿@{
+var listCats = Model.ToList();
+}
+
+<div class="legend text-center">
+    <h2>All Cats</h2>
+</div>
+<hr class="my-2">
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="form-holder text-center">
+
+            @for(int i =0; i < listCats.Count(); i++)
+            {
+
+            @if(i % 3 == 0)
+            {
+            <div class="d-flex justify-content-between mt-4">
+
+                }
+                @{
+                var breedR = listCats[i].Breed;
+                var imgFile = "";
+                if(breedR == "StreetTranscended")
+                {
+                breedR = "Street Transcended";
+                imgFile = "https://res.cloudinary.com/emo-cloud/image/upload/v1564600313/street-transcended_ksjx1h.png";
+                }
+                if(breedR == "AmericanShorthair")
+                {
+                breedR = "American Shorthair";
+                imgFile = "https://res.cloudinary.com/emo-cloud/image/upload/v1564600312/american-shorthair_dktgse.jpg";
+
+                }
+                if(breedR == "Munchkin")
+                {
+                imgFile = "https://res.cloudinary.com/emo-cloud/image/upload/v1564600312/munchkin_bxc7xz.jpg";
+
+                }
+                if(breedR == "Siamese")
+                {
+                imgFile = "https://res.cloudinary.com/emo-cloud/image/upload/v1564600313/siamese_unmw96.png";
+
+                }
+                }
+                <div class="p-3 w-25">
+                    <div class="d-flex justify-content-between">
+                        <img src="@imgFile" alt="Cats" title="" width="640" height="425" />
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+                        <h6>Name:</h6>
+                        <h6>@listCats[i].Name</h6>
+                    </div>
+                    <br />
+                    <div class="d-flex justify-content-between">
+                        <h6>Age:</h6>
+                        <h6>@listCats[i].Age</h6>
+
+                    </div>
+                    <br />
+                    <div class="d-flex justify-content-between">
+                        <h6>Breed:</h6>
+                        <h6>@breedR</h6>
+                    </div>
+                </div>
+                @if(i % 3 == 2)
+                {
+            </div>
+            }
+
+
+
+
+            }
+
+
+
+
+
+
+          
+
+        </div>
+    </div>
+</div>

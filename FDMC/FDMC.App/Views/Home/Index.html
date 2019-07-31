@@ -1,0 +1,24 @@
+﻿<body>
+    <div class="container-fluid">
+
+        <hr class="my-5" />
+        <div class="jumbotron">
+            @if(User != null)
+            {
+                <h1>Welcome, @User.Username</h1>
+                <p>The simplest, cutest, most reliable website for trading cats.</p>
+                <hr class="my-2">
+            }
+            @else
+            {
+                <h1>Welcome to Fluffy Duffy Munchkin Cats</h1>
+                <p>The simplest, cutest, most reliable website for trading cats.</p>
+                <hr class="my-2">
+                <p><a href="/Users/Login">Login</a> to trade or <a href="/Users/Register">Register</a> if you don't have an account.</p>
+            }
+      
+        </div>
+        <hr class="my-5" />
+
+    </div>
+</body>
